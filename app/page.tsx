@@ -15,10 +15,10 @@ export default function Home() {
       try {
         setLoading(true);
 
-       
+        // Faça a chamada à API do Brasil API usando fetch
         const response = await fetch(`https://brasilapi.com.br/api/veiculos/fipe/${codigoFipe}`);
         
-      
+        // Verifique se a resposta foi bem-sucedida (status 200)
         if (response.ok) {
           const data = await response.json();
           setDadosVeiculo(data);
@@ -37,7 +37,9 @@ export default function Home() {
     }
   }, [codigoFipe]);
 
-
+  const handleBuscar = () => {
+    
+  };
 
   return (
     <div>
